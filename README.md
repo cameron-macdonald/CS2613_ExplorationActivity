@@ -9,13 +9,25 @@ My program demonstrates the use of the Selenium package.
 
 ### 2. How does someone run your program?
 
-    Someone would run my program by running the ExplorationActivity.py file in the terminal
+Someone would run my program by running the ExplorationActivity.py file in the terminal
 
     python ExplorationActivity.py
 
 ### 3. What purpose does your program serve?
 
+My program is a web scrapping data tool intended for NHL managers or scouts to evaluate a players output based on how much they are getting paid ($). In short my programs purpose is to use publicly available online data to help find under paid and or over paid NHL players
 
+
+EX:
+| Rank | Player | Value for P (per P) |
+|-----:|:-------|--------------------:|
+| 1 | Hutson, Lane | $13,768 |
+|...|...|...|
+| 21 | Xhekaj, Arber | $650,000 |
+
+1 point for player Lane Hudson cost the Montreal Canadaians only $13,768
+
+1 point for player Arber Xhekaj cost the Montreal Canadaians $650,000
 
 ### 4. What would be some sample input/output?
 The first output you should see just after running ExplorationAcitivity.py:
@@ -28,9 +40,9 @@ The first output you should see just after running ExplorationAcitivity.py:
         G (Goals)
         A (Assists)
 
-From here you would input either _P_ _G_ or _A_ to select how youd like to evalute the players
+From here you would input into terminal command line either _P_ _G_ or _A_ to select how youd like to evalute the players
 
-    Sample Ex: G
+    Sample Input: G
 
 Upon selecting your choice you should see the following output:
 
@@ -69,9 +81,9 @@ Upon selecting your choice you should see the following output:
         WPG (Winnipeg Jets)
         WSH (Washington Capitals)
 
-From here you would input the abbriviation of the team above you would like to evalute
+From here you would input into the command terminal the abbriviation of the team above you would like to evalute
 
-    Sample Ex: MTL
+    Sample Input: MTL
 
 The program will then prompt you to wait:
     
