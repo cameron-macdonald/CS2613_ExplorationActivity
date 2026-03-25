@@ -52,13 +52,13 @@ team_link_map = {
 #=================================================================================
 print('\n---- Welcome to the Under Valued Hockey Player Finder----')
 print('=====================================================\n')
-print('---- Please Input How Youd Like To Evaluate The Player ----\n')
+print('---- Please Input How You Would Like To Evaluate The Players ----\n')
 print('\tP (Points)\n\tG (Goals)\n\tA (Assists)\n')
 evaluation_choice = input()
 i = stat_map.get(evaluation_choice)
 
 
-print('---- Please Input Which Team You Like to Evaluate ----\n')
+print('---- Please Input Which Team You Would Like to Evaluate ----\n')
 print('\tANA (Anaheim Ducks)\n\tBOS (Boston Bruins)\n\tBUF (Buffalo Sabres)\n\tCAR (Carolina Hurricanes)\n\tCBJ (Columbus Blue Jackets)\n\tCGY (Calgary Flames)\n\tCHI (Chicago Blackhawks)\n\tCOL (Colorado Avalanche)\n\tDAL (Dallas Stars)\n\tDET (Detroit Red Wings)\n\tEDM (Edmonton Oilers)\n\tFLA (Florida Panthers)\n\tLAK (Los Angeles Kings)\n\tMIN (Minnesota Wild)\n\tMTL (Montreal Canadiens)\n\tNJD (New Jersey Devils)\n\tNSH (Nashville Predators)\n\tNYI (New York Islanders)\n\tNYR (New York Rangers)\n\tOTT (Ottawa Senators)\n\tPHI (Philadelphia Flyers)\n\tPIT (Pittsburgh Penguins)\n\tSJS (San Jose Sharks)\n\tSEA (Seattle Kraken)\n\tSTL (St. Louis Blues)\n\tTBL (Tampa Bay Lightning)\n\tTOR (Toronto Maple Leafs)\n\tUTA (Utah Hockey Club)\n\tVAN (Vancouver Canucks)\n\tVGK (Vegas Golden Knights)\n\tWPG (Winnipeg Jets)\n\tWSH (Washington Capitals)')
 team_choice = input()
 config = team_link_map[team_choice]
