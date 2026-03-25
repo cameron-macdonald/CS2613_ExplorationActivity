@@ -1,33 +1,40 @@
 # CS2613_ExplorationActivity
 
-## 1. Which package/library does the sample program demonstrate?
+### 1. Which package/library does the sample program demonstrate?
 
-    My program demonstrates the use of the Selenium package
+My program demonstrates the use of the Selenium package.
+    
+    from seleniumbase import Driver
+    from selenium.webdriver.common.by import By
 
-## 2. How does someone run your program?
+### 2. How does someone run your program?
 
     Someone would run my program by running the ExplorationActivity.py file in the terminal
 
     python ExplorationActivity.py
 
-## 3. What purpose does your program serve?
+### 3. What purpose does your program serve?
 
 
 
-## 4. What would be some sample input/output?
+### 4. What would be some sample input/output?
+The first output you should see just after running ExplorationAcitivity.py:
 
----- Welcome to the Under Valued Hockey Player Finder----
-=====================================================
-
----- Please Input How You Would Like To Evaluate The Players ----
+    ---- Welcome To The Under Valued Hockey Player Finder ----
+    =================================================================
+    ---- Please Input How You Would Like To Evaluate The Players ----
 
         P (Points)
         G (Goals)
         A (Assists)
 
+From here you would input either _P_ _G_ or _A_ to select how youd like to evalute the players
 
+    Sample Ex: G
 
----- Please Input Which Team You Would Like to Evaluate ----
+Upon selecting your choice you should see the following output:
+
+    ---- Please Input Which Team You Would Like to Evaluate ----
 
         ANA (Anaheim Ducks)
         BOS (Boston Bruins)
@@ -62,30 +69,36 @@
         WPG (Winnipeg Jets)
         WSH (Washington Capitals)
 
+From here you would input the abbriviation of the team above you would like to evalute
 
-Please wait ...
+    Sample Ex: MTL
 
----- Evaluating MTL Players Based on P ----
+The program will then prompt you to wait:
+    
+    Please wait ...
 
-Hutson, Lane              | Value for P: $13,768 per P
-Demidov, Ivan             | Value for P: $17,422 per P
-Kapanen, Oliver           | Value for P: $26,428 per P
-Bolduc, Zack              | Value for P: $33,205 per P
-Texier, Alexandre         | Value for P: $52,631 per P
-Suzuki, Nick              | Value for P: $91,569 per P
-Caufield, Cole            | Value for P: $103,289 per P
-Slafkovsky, Juraj         | Value for P: $120,634 per P
-Evans, Jake               | Value for P: $135,714 per P
-Struble, Jayden           | Value for P: $141,250 per P
-Newhook, Alex             | Value for P: $145,000 per P
-Matheson, Mike            | Value for P: $147,727 per P
-Carrier, Alexandre        | Value for P: $170,454 per P
-Dobson, Noah              | Value for P: $206,521 per P
-Veleno, Joe               | Value for P: $225,000 per P
-Dach, Kirby               | Value for P: $240,178 per P
-Anderson, Josh            | Value for P: $250,000 per P
-Gallagher, Brendan        | Value for P: $295,454 per P
-Danault, Phillip          | Value for P: $500,000 per P
-Guhle, Kaiden             | Value for P: $555,000 per P
-Xhekaj, Arber             | Value for P: $650,000 per P
-Laine, Patrik             | Value for P: $8,700,000 per P
+After about 10-20 seconds you should see a resulting table like the following:
+| Rank | Player | Value for P (per P) |
+|-----:|:-------|--------------------:|
+| 1 | Hutson, Lane | $13,768 |
+| 2 | Demidov, Ivan | $17,422 |
+| 3 | Kapanen, Oliver | $26,428 |
+| 4 | Bolduc, Zack | $33,205 |
+| 5 | Texier, Alexandre | $52,631 |
+| 6 | Suzuki, Nick | $91,569 |
+| 7 | Caufield, Cole | $103,289 |
+| 8 | Slafkovsky, Juraj | $120,634 |
+| 9 | Evans, Jake | $135,714 |
+| 10 | Struble, Jayden | $141,250 |
+| 11 | Newhook, Alex | $145,000 |
+| 12 | Matheson, Mike | $147,727 |
+| 13 | Carrier, Alexandre | $170,454 |
+| 14 | Dobson, Noah | $206,521 |
+| 15 | Veleno, Joe | $225,000 |
+| 16 | Dach, Kirby | $240,178 |
+| 17 | Anderson, Josh | $250,000 |
+| 18 | Gallagher, Brendan | $295,454 |
+| 19 | Danault, Phillip | $500,000 |
+| 20 | Guhle, Kaiden | $555,000 |
+| 21 | Xhekaj, Arber | $650,000 |
+| 22 | Laine, Patrik | $8,700,000 |
