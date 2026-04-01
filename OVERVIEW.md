@@ -26,20 +26,17 @@
   On these sites, the data (the HTML) doesn't actually exist until a browser runs the JavaScript. Because Beautiful Soup isn't a browser, it just sees a blank page.
 
   I switched to SeleniumBase because it has extra features that helps it act as a "data bridge."
-  One of these features I used was Undetected-Chromedriver (uc) mode.
+  One of these features I used in my code was Undetected-Chromedriver (uc) mode.
     
-    ```python 
-    driver = Driver(uc=True, headless=True)
-  
-  In simple terms, uc=True stands for Undetected-Chromedriver mode. It is a specialized feature in SeleniumBase designed to stop websites from realizing that your browser is being controlled by a robot.
-
-Normally, when you use standard Selenium, the browser sends out "signals" (called fingerprints) that tell the website, "Hey, I am an automated script!" Many modern websites (like the NHL stats and salary sites you are using) see those signals and immediately block the connection or throw up a CAPTCHA (those "Prove you are a human" puzzles).
-
-  It allowed me to solve a "data silo" problem: NHL salary data and NHL performance stats live on completely different websites. 
-  By using SeleniumBase to navigate both, I was able to scrape two separate domains and merge the data into a single, actionable analytical tool that calculates a player's true value.
-
-
-
+  ```python
+  # Initializing the driver with stealth (UC) and background (Headless) modes
+  driver = Driver(uc=True, headless=True)
+  ```
+  The uc=True attribute enables Undetected-Chromedriver mode. It is a specialized feature in SeleniumBase designed to stop websites from realizing that your browser is being controlled by a robot.
+  Many modern websites, like CapWages[4] and ESPN[5] that i used, try to block script connections or throw up a CAPTCHA.
+  By using SeleniumBase and the UC mode I was able to scrape two separate domains that i was unable to using Beautiful Soup.
+ 
+  So, I chose SeleniumBase because it can execute JavaScript and bypass bot detection, allowing me to access two data-heavy websites that simpler scraping tools could not access.
 
 ## 6. How did learning the package/library influence your learning of the language?
 
@@ -56,4 +53,4 @@ Normally, when you use standard Selenium, the browser sends out "signals" (calle
   
   [4] CapWages Team Salaries: https://capwages.com/
 
-  [4] ESPN NHL Statistics: https://www.espn.com/nhl/stats/
+  [5] ESPN NHL Statistics: https://www.espn.com/nhl/stats/
