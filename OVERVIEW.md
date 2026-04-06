@@ -139,6 +139,10 @@ Tag Name: Used for getting structural elements like rows from a table.
 ### • Would you continue using this package/library? Why or why not?
 
 ## References
+
+
+
+
   [1]: https://pypi.org/project/selenium/ 
 
   [2]: https://www.selenium.dev/history/#:~:text=The%20story%20starts%20in%202004,this%20was%20a%20day%20job.
@@ -149,4 +153,4 @@ Tag Name: Used for getting structural elements like rows from a table.
   
   [5]: https://capwages.com/
 
-  [6]: https://www.espn.com/nhl/stats/
+  [6]: https://www.espn.com/nhl/stats
