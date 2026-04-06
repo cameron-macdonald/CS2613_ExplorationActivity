@@ -140,7 +140,17 @@ Tag Name: Used for getting structural elements like rows from a table.
 
 ## References
 
+  1. Selenium Documentation: [https://pypi.org/project/selenium/][1]
 
+  2. Selenium History:  [https://www.selenium.dev/history/#:~:text=The%20story%20starts%20in%202004,this%20was%20a%20day%20job.][2]
+
+  3. SeleniumBase Documentation: [https://github.com/seleniumbase/SeleniumBase][3]
+
+  4. Beautiful Soup Documentation: [https://beautiful-soup-4.readthedocs.io/en/][4]
+
+  5. CapWages Team Salaries: [https://capwages.com/][5]
+
+  6. ESPN NHL Statistics: [https://www.espn.com/nhl/stats][6]
 
 
   [1]: https://pypi.org/project/selenium/ 
