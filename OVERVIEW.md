@@ -135,8 +135,18 @@ Tag Name: Used for getting structural elements like rows from a table.
 ## 6. How did learning the package/library influence your learning of the language?
 
 ## 7. How was your overall experience with the package/library?
-### • When would you recommend this package/library to someone?
-### • Would you continue using this package/library? Why or why not?
+
+***When would you recommend this package/library to someone?***
+
+  If they were looking to do any sort of web scraping beyond some simple parsing.
+  I would reccomend to use the [Beautiful Soup Python library][4] 
+  
+***Would you continue using this package/library? Why or why not?***
+
+  Yeah I would definitley continue using the SeleniumBase package in the future. 
+  Throughout my time working on the project the package was able to help achieve everything I wanted it to and it never really gave me any issues.
+  In fact come the future I would actually like to explore the package more in depth. 
+  When reading trough the documentation and other online materials there was many additional features I saw that I did not get to explore.
 
 ## References
 
