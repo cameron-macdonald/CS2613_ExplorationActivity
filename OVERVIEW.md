@@ -133,21 +133,46 @@ Tag Name: Used for getting structural elements like rows from a table.
   So, I chose SeleniumBase because it can execute JavaScript and bypass bot detection, allowing me to access two data-heavy websites that simpler scraping tools could not access.
 
 ## 6. How did learning the package/library influence your learning of the language?
-
+  For me, this package really helped me learn data structures and Object-Oriented Programming (OOP). For a lot of my previous work in python it mainly involved string and variable manipulation but nothing frther.
+  While I knew OOP from Java I hadnt done much OOP in pyhton, so using the Driver object in SeleniumBase helped me learn it in pyhton. Just like java an object has specific methods like _.get()_, _.find_element()_, and _.quit()_.
+  
+   As well learning this package for my project required me to learn how to use Dictionaries.
+   While I had heard of dictionairies before this was really my first time implementing them myself.
+   Scraping the rosters from [CapWages][5] and [ESPN][6] required more than just simple lists to map player names to their stats and salaries.
+   I had to learn to work with Key and Value pairs so that the driver would access the proper links to the right teams for both websites.
+ 
+  ```python
+     #Example Dictionary from lines 15-48
+     team_link_map = {
+        "CBJ": {"capwages": "columbus_blue_jackets", "espn": "cbj/columbus-blue-jackets"},
+        "DET": {"capwages": "detroit_red_wings", "espn": "det/detroit-red-wings"},
+        ...
+        "TBL": {"capwages": "tampa_bay_lightning", "espn": "tb/tampa-bay-lightning"},
+        "VGK": {"capwages": "vegas_golden_knights", "espn": "vgs/vegas-golden-knights"},
+    }
+  ```
+    
 ## 7. How was your overall experience with the package/library?
 
+  My overall experience with [SeleniumBase][3] was really great!
+  I found it quite simple to install and also very easy to start learning.
+  While I did not dive into every feature available, the ones I did look into were fairly straightforward and had lots of examples online for reference.
+  The package was able to help me achieve everything I wanted to throughout my time working on the project.
+  As well, it never really gave me any bugs or issues I could not solve.
+
 ***When would you recommend this package/library to someone?***
+  I would recommend SeleniumBase to someone if they were looking to do any sort of complex web work. 
+  If someone mentioned wanting to do some web testing, automation or scraping then SeleniumBase would be great for them.
+  However, if they were just interested in doing some parsing of simple websites I would recommend them to use the 
+  [Beautiful Soup Python library][4] as its a more lightweight library for parsing static HTML, 
+  whereas SeleniumBase is better suited for dynamic, JavaScript-heavy websites.
 
-  If they were looking to do any sort of web scraping beyond some simple parsing.
-  I would reccomend to use the [Beautiful Soup Python library][4] 
-  
 ***Would you continue using this package/library? Why or why not?***
-
-  Yeah I would definitley continue using the SeleniumBase package in the future. 
-  Throughout my time working on the project the package was able to help achieve everything I wanted it to and it never really gave me any issues.
-  In fact come the future I would actually like to explore the package more in depth. 
-  When reading trough the documentation and other online materials there was many additional features I saw that I did not get to explore.
-
+  Yeah I would definitely continue using the SeleniumBase package in the future. 
+  In fact come the future I would actually like to explore the package more in depth myself. 
+  When reading through the documentation and other online materials there were many additional features I saw that I did not get to explore.
+  Specifically I did not utilize any of the the testing features like simulating clicking or form submissions as my project just utilized data scraping.
+  
 ## References
 
   1. Selenium Documentation: [https://pypi.org/project/selenium/][1]
