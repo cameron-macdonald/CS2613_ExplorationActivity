@@ -12,7 +12,11 @@ My program demonstrates the use of the Selenium package.
 Someone would run my program by first installing the package in their terminal:
      
       pip install seleniumbase
+
+You may also need to install the Chrome driver if not already installed on your computer
       
+        sbase install chromedriver
+
 Once installed, next simply run the ExplorationActivity.py file in the terminal
 
     python ExplorationActivity.py
