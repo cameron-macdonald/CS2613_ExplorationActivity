@@ -9,9 +9,16 @@ My program demonstrates the use of the Selenium package.
 
 ### 2. How does someone run your program?
 
-Someone would run my program by running the ExplorationActivity.py file in the terminal
+Someone would run my program by first installing the package in their terminal:
+     
+      pip install seleniumbase
+      
+Once installed, next simply run the ExplorationActivity.py file in the terminal
 
     python ExplorationActivity.py
+    
+From there you will interact with program via terminal input and output.
+For more details on what to input please jump to the ["What would be some sample input/output?"](#4-what-would-be-some-sample-inputoutput) section.
 
 ### 3. What purpose does your program serve?
 
