@@ -13,45 +13,63 @@
 
 ## 2. What is the package/library?
 ### • What purpose does it serve?
-SeleniumBase is a high-level framework that is designed to make web interaction reliable, simple, and often automated. 
+SeleniumBase is a high-level framework that is designed for web interaction using python.
 While the [original Selenium library][1] is like a raw engine, SeleniumBase is the more modern version built around it. 
+This version is known for being reliable, simple, and often automated.
 
 **Its primary purposes are:**
   
-  **Web Scraping:** Extracting data from dynamic websites (like [CapWages][5] or [ESPN][6] used in my project) where content is rendered via JavaScript and cannot be captured by simple tools like http requests.
+  **Web Scraping:** Extracting data from dynamic websites like [CapWages][5] or [ESPN][6] used in my project.
+  For many modern websites the content is rendered via JavaScript and cannot be captured by simple tools like http requests.
   
-  **Automated Testing:** Verifying that web applications work correctly by simulating user clicks, form entries, navigation and more.
+  **Automated Testing:** Verifying that web applications work and are running correctly. 
+  The framework has great features allowing the developer to simulate user clicks, form entries, navigation and more.
   
-  **Bot Detection Evasion:** Its "UC mode" (Undetected-Chromedriver) mode modifies some of the browser’s properties to prevent websites from identifying the script as a bot, which is essential for many modern sites.
+  **Script Detection Evasion:** Its "UC mode" (Undetected-Chromedriver) mode modifies some of the browser’s properties to prevent websites from identifying the script as a bot.
+  This is essential if you want to scrape many modern sites.
 
 ### • How do you use it?
 
-DONTTTTTT SUBMIT THIS SECTION
-DONTTTTTT SUBMIT THIS SECTION
-DONTTTTTT SUBMIT THIS SECTION
-You use it by initializing a Driver object. This object acts as your "proxy" in the browser. Y
-ou give it commands to navigate to URLs, wait for specific elements to appear (to handle slow loading), and then locate data using various "selectors" (like XPATH or CSS selectors).
+SeleniumBase is designed to be a ready to use package. 
+You use it by initializing a Driver object, which acts as a programmable interface for a web browser. 
+Instead of manually clicking, scrolling, etc. you write Python commands to that Driver for it to execute.
 
-In my specific program:
+The typical workflow involves four main steps:
 
-Initialization: 
-You use Driver(uc=True, headless=True). This tells the program to run in the background (headless) and to use "Undetected" mode so the NHL/ESPN sites don't block you.
+1. Initialization: You configure the browser with the settings you want, such as enabling UC Mode to bypass detection or Headless Mode to run the script without a visible window.
 
-Navigation: driver.get(url) moves the browser to the team page.
+2. Navigation: You direct the driver object to a specific URL using the .get() method.
 
-Synchronization: driver.wait_for_element("table") is a critical step; it prevents the script from crashing by ensuring the data has actually loaded before the script tries to read it.
+3. Synchronization: Since modern websites load content dynamically, you use smart waits like a wait_for_element(). This ensures the page is fully ready before the script attempts to interact with it.
 
-Interaction: You use find_elements(By.TAG_NAME, "tr") to iterate through the rows of the hockey rosters.
+4. Interaction & Extraction: This is key functionality, using selectors like CSS or XPATH to locate specific data or buttons you want to interact with.
+   Once you find what you want, you can extract text, click links, or scrape entire tables into Python data structures.
 
-
-DONTTTTTT SUBMIT THIS SECTION
-DONTTTTTT SUBMIT THIS SECTION
-DONTTTTTT SUBMIT THIS SECTION
+A Basic Implementation Example:
+  ```python
+    from seleniumbase import Driver
+    
+    # 1. Initialize the driver with stealth settings
+    driver = Driver(uc=True, headless=True)
+    
+    try:
+        # 2. Navigate to the target site
+        driver.get("https://capwages.com/teams/columbus_blue_jackets")
+    
+        # 3. Wait for the JavaScript-heavy table to actually render
+        driver.wait_for_element("table", timeout=10)
+    
+        # 4. Extract data (Example: printing the page title)
+        print(f"Successfully accessed: {driver.get_title()}")
+    
+    finally:
+        driver.quit()
+  ```
 
 ## 3. What are the functionalities of the package/library?
 
 **1. Undetected Mode (UC):**
-Standard web automation often leaves clues that tell a server it is a script being ran and not an acutual human. 
+Standard web automation often leaves clues that tell a server it is a script being run and not an actual human. 
 SeleniumBase’s UC mode (uc=True) hides these clues, which is why my script can access websites without an "Access Denied" pop up.
 
   ```python
@@ -60,7 +78,7 @@ SeleniumBase’s UC mode (uc=True) hides these clues, which is why my script can
   ```
 
 **2. Headless Mode:**
-By setting headless=True, the browser runs in the computer's memory without redering an actual window. 
+By setting headless=True, the browser runs in the computer's memory without rendering an actual window. 
 This makes the script faster and also allows it to run on servers that don't have a monitor. 
 In my case it allows me to run it in the background without a browser popping up preventing my workflow.
 
@@ -81,7 +99,7 @@ It acts as the primary trigger code for the WebDriver to fire up and begin inter
 **4. Intelligent Waiting**
 When loading up a website certain features like tables or stats are not loaded right away.
 Unlike time.sleep(), which pauses for a fixed amount of time, SeleniumBase's wait_for_element function polls the page and only resumes execution right when the required data appears. 
-This makes the script function much better by making it significantly faster then a typical wait and by also preventing a crash caused by trying to scrape a table that hasn't finished loading yet.
+This makes the script function much better by making it significantly faster than a typical wait and by also preventing a crash caused by trying to scrape a table that hasn't finished loading yet.
 
   ```python
     #Example from line 80:
@@ -92,7 +110,7 @@ This makes the script function much better by making it significantly faster the
 The By class allows you to target very specific parts or sections of a webpage that you know you want to use.
 This prevents developers from having to dig deep into the html of the site and parse out what they want.
 
-XPATH: You can use the webistes XPATH for complex navigation like an embeded table.
+XPATH: You can use the website's XPATH for complex navigation like an embeded table.
   ```python
     #Example from line 84:
     forward_table = driver.find_element(By.XPATH, '//*[@id="__next"]/div[1]/main/div/div[1]/div[3]/div[1]/table')
@@ -113,7 +131,7 @@ Tag Name: Used for getting structural elements like rows from a table.
   Today it is a robust framework that is still consistently maintained with updates to match new browser versions.
 
 ## 5. Why did you select this package/library?
-  I selected SeleniumBase as I knew I wanted to completed a project involving web scraping. 
+  I selected SeleniumBase as I knew I wanted to complete a project involving web scraping. 
   When I originally started the project I tried the [Beautiful Soup Python library][4] as it was recommended for being simple to work with.
   However, Beautiful Soup could not get past the security and technical barriers of the websites I needed to use.  
   It turns out that traditional tools like Beautiful Soup fail on modern websites that rely on React or Vue.
@@ -129,15 +147,23 @@ Tag Name: Used for getting structural elements like rows from a table.
   The uc=True attribute enables Undetected-Chromedriver mode. It is a specialized feature in SeleniumBase designed to stop websites from realizing that your browser is being controlled by a robot.
   Many modern websites, like [CapWages][5] and [ESPN][6] that i used, try to block script connections or throw up a CAPTCHA.
   By using SeleniumBase and the UC mode I was able to scrape two separate domains that i was unable to using Beautiful Soup.
- 
-  So, I chose SeleniumBase because it can execute JavaScript and bypass bot detection, allowing me to access two data-heavy websites that simpler scraping tools could not access.
+
+  
+  |Feature | Beautiful Soup | SeleniumBase|
+  | -------- | -------- | -------- |
+  | JS Rendering  | No  | Yes   |
+  | Bot Evasion   | Limited   | High (UC Mode)  |
+  | Speed   | Fast (Static)   | Moderate (Dynamic)   |
+   
+  So, I chose SeleniumBase for a few reasons. First I had no problem with slower speeds, my program could function well no matter the delay. Second, it can execute JavaScript allowing me to access two data-heavy   websites that simpler scraping tools could not. Finally, because of its bot evasion I was able access the websites with no detection.
 
 ## 6. How did learning the package/library influence your learning of the language?
-  For me, this package really helped me learn data structures and Object-Oriented Programming (OOP). For a lot of my previous work in python it mainly involved string and variable manipulation but nothing frther.
+  For me, this package really helped me learn data structures and Object-Oriented Programming (OOP). 
+  For a lot of my previous work in python it mainly involved string and variable manipulation but nothing further.
   While I knew OOP from Java I hadnt done much OOP in pyhton, so using the Driver object in SeleniumBase helped me learn it in pyhton. Just like java an object has specific methods like _.get()_, _.find_element()_, and _.quit()_.
   
    As well learning this package for my project required me to learn how to use Dictionaries.
-   While I had heard of dictionairies before this was really my first time implementing them myself.
+   While I had heard of dictionaries before this was really my first time implementing them myself.
    Scraping the rosters from [CapWages][5] and [ESPN][6] required more than just simple lists to map player names to their stats and salaries.
    I had to learn to work with Key and Value pairs so that the driver would access the proper links to the right teams for both websites.
  
